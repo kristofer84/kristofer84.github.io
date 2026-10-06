@@ -1,9 +1,178 @@
-<html>
-  <body>
-    Hello!
-    <br/>
-    See my profile at:
-    <a href="https://github.com/kristofer84">GitHub</a> (<a href="https://gist.github.com/kristofer84">gists</a>)
-    <a href="https://www.linkedin.com/in/kristofer-nilsson">LinkedIn</a>
-    <a href="https://stackoverflow.com/users/1398417/kristofer">Stack Overflow</a>
-</body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kristofer Nilsson</title>
+<meta name="description" content="Tech Lead at TUI in Stockholm. Backend systems, web apps, and the infrastructure around them.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b6ef0'/%3E%3Ctext x='32' y='43' font-family='system-ui,sans-serif' font-size='30' font-weight='700' fill='white' text-anchor='middle'%3EKN%3C/text%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #16181d;
+    --muted: #5c6370;
+    --faint: #8b93a1;
+    --card: #fbfbfc;
+    --line: #e3e6ea;
+    --accent: #0b6ef0;
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0e1013;
+      --fg: #e8eaed;
+      --muted: #a2a9b4;
+      --faint: #767d88;
+      --card: #15181d;
+      --line: #24282f;
+      --accent: #6aa5ff;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    padding: 3rem 1.25rem 4rem;
+    background: var(--bg);
+    color: var(--fg);
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  main { max-width: 54rem; margin: 0 auto; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  header { margin-bottom: 3.25rem; }
+  h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 .6rem; letter-spacing: -.02em; }
+  .lede { font-size: 1.05rem; margin: 0 0 .75rem; max-width: 42rem; }
+  .stack { color: var(--muted); font-size: .925rem; margin: 0 0 1.1rem; max-width: 44rem; }
+  .links { display: flex; flex-wrap: wrap; gap: .5rem .9rem; font-size: .925rem; font-weight: 500; }
+  .links a { border-bottom: 1px solid var(--line); padding-bottom: 1px; }
+  .links a:hover { border-bottom-color: var(--accent); text-decoration: none; }
+
+  h2 {
+    font-size: .78rem;
+    text-transform: uppercase;
+    letter-spacing: .09em;
+    color: var(--faint);
+    font-weight: 600;
+    margin: 2.5rem 0 .9rem;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .grid { display: grid; gap: .7rem; grid-template-columns: repeat(auto-fit, minmax(15.5rem, 1fr)); }
+  .card {
+    display: block;
+    padding: .9rem 1rem 1rem;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    color: inherit;
+    transition: transform .12s ease, border-color .12s ease;
+  }
+  .card:hover { transform: translateY(-2px); border-color: var(--accent); text-decoration: none; }
+  .card h3 { margin: 0 0 .35rem; font-size: .97rem; font-weight: 600; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+  .card p { margin: 0 0 .6rem; font-size: .875rem; line-height: 1.5; color: var(--muted); }
+  .meta { font-size: .74rem; letter-spacing: .04em; text-transform: uppercase; color: var(--faint); }
+
+  .gists { list-style: none; margin: 0; padding: 0; display: grid; gap: .4rem; font-size: .9rem; }
+  .gists li a { display: inline-block; }
+  .gists code { font-size: .82rem; color: var(--faint); }
+
+  footer {
+    margin-top: 3.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--line);
+    font-size: .85rem;
+    color: var(--faint);
+    max-width: 44rem;
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <header>
+    <h1>Kristofer Nilsson</h1>
+    <p class="lede">Tech Lead at TUI in Stockholm. ~15 years building backend systems, web apps, and the infrastructure around them.</p>
+    <p class="stack">Daily stack: <strong>C# / ASP.NET Core</strong>, <strong>Vue 3 + TS</strong>, <strong>PostgreSQL</strong>, <strong>Node.js</strong>, <strong>Docker</strong>. Also work with email infrastructure (Postfix, Dovecot, DMARC), OpenWrt, Home Assistant, local LLMs.</p>
+    <nav class="links">
+      <a href="https://github.com/kristofer84">GitHub</a>
+      <a href="https://gist.github.com/kristofer84">Gists</a>
+      <a href="https://www.linkedin.com/in/kristofer-nilsson/">LinkedIn</a>
+      <a href="https://stackoverflow.com/users/1398417/kristofer">Stack Overflow</a>
+    </nav>
+  </header>
+
+  <h2>Networks and firmware</h2>
+  <div class="grid">
+    <a class="card" href="https://github.com/kristofer84/archer-mr600-openwrt">
+      <h3>archer-mr600-openwrt</h3>
+      <p>OpenWrt on the TP-Link Archer MR600 v1 (EU), with the built-in LTE modem working unattended. Prebuilt images plus a reproducible build kit.</p>
+      <span class="meta">Shell · OpenWrt</span>
+    </a>
+    <a class="card" href="https://github.com/kristofer84/11r-monitor">
+      <h3>11r-monitor</h3>
+      <p>Real-time 802.11r fast-transition tracker for OpenWrt APs, with RRM and passive-capture RSSI positioning on a live property map.</p>
+      <span class="meta">TypeScript · Vue</span>
+    </a>
+    <a class="card" href="https://github.com/kristofer84/wpa8630-exploit-test">
+      <h3>wpa8630-exploit-test</h3>
+      <p>Firmware analysis of a TP-Link TL-WPA8630P v2, with an eye toward getting OpenWrt onto it.</p>
+      <span class="meta">Python</span>
+    </a>
+  </div>
+
+  <h2>Reverse engineering and security</h2>
+  <div class="grid">
+    <a class="card" href="https://github.com/kristofer84/ghidra-arm64">
+      <h3>ghidra-arm64</h3>
+      <p>Headless Ghidra for arm64: builds the C++ decompiler from source and layers it in, so decompiles actually work on Raspberry Pi and Apple Silicon.</p>
+      <span class="meta">Java · Ghidra</span>
+    </a>
+    <a class="card" href="https://github.com/kristofer84/process-credential-scanner">
+      <h3>process-credential-scanner</h3>
+      <p>Demonstrates that Edge keeps credentials in cleartext in process memory.</p>
+      <span class="meta">JavaScript · Security</span>
+    </a>
+  </div>
+
+  <h2>Backend and tooling</h2>
+  <div class="grid">
+    <a class="card" href="https://github.com/kristofer84/mcp-postgres">
+      <h3>mcp-postgres</h3>
+      <p>MCP server for PostgreSQL, published on npm. Handles AWS RDS certificate setup automatically.</p>
+      <span class="meta">JavaScript · MCP</span>
+    </a>
+    <a class="card" href="https://github.com/kristofer84/dmarc-parser">
+      <h3>dmarc-parser</h3>
+      <p>Parses DMARC aggregate reports into a readable format.</p>
+      <span class="meta">TypeScript · Email</span>
+    </a>
+    <a class="card" href="https://github.com/kristofer84/analog-timestamp-parser">
+      <h3>analog-timestamp-parser</h3>
+      <p>Extracts 7-segment-style timestamps from images — old digital cameras, CCTV.</p>
+      <span class="meta">JavaScript · OCR</span>
+    </a>
+    <a class="card" href="https://github.com/kristofer84/star-battle-solver">
+      <h3>star-battle-solver</h3>
+      <p>Solver for Star Battle puzzles.</p>
+      <span class="meta">TypeScript</span>
+    </a>
+  </div>
+
+  <h2>Gists worth a look</h2>
+  <ul class="gists">
+    <li><a href="https://gist.github.com/kristofer84/f20b7e0fc68b3df0accb59eb08b24beb">EdgeRouter static route toggle</a> <code>static_route.sh</code></li>
+    <li><a href="https://gist.github.com/kristofer84/dafe2015a6f81b9e8cae2d2571a450c6">X11 forwarding over SSH from WSL</a> <code>X11.ps1</code></li>
+    <li><a href="https://gist.github.com/kristofer84/6afba65052526082d540e67aaf5b2e45">PowerShell Graph commands</a> <code>ms-graph.ps1</code></li>
+    <li><a href="https://gist.github.com/kristofer84/36fce69f28d48cbe10fb1649f58aaf74">Home Assistant blueprint — IKEA TRADFRI 5-button remote</a> <code>.yaml</code></li>
+    <li><a href="https://gist.github.com/kristofer84">…and 18 more</a></li>
+  </ul>
+
+  <footer>
+    Outside work: trail running, RTL-SDR (ADS-B / AIS / ACARS), orienteering map-making with QGIS + LiDAR, Home Assistant, sailing.
+  </footer>
+
+</main>
+</body>
+</html>
